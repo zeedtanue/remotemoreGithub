@@ -7,7 +7,8 @@ const { success, error } = require("consola");
 var usersRouter = require('./routes/users');
 
 var app = express();
-const PORT = 5000;
+require('dotenv').config();
+const port = process.env.PORT;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -38,8 +39,8 @@ app.use(function(err, req, res, next) {
 
 const startApp = async () => {
   try {
-    app.listen( PORT, () => 
-      success({ message: `Server started on PORT ${PORT}`, badge: true })
+    app.listen(port, () => 
+      success({ message: `Server started on PORT ${port}`, badge: true })
     )
   } catch (err) {
     error({
