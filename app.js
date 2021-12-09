@@ -46,7 +46,7 @@ const startApp = async () => {
     )
   } catch (err) {
     error({
-      message: `Unable to connect with Server \n${err}`,
+      message: `Unable to connect Server \n${err}`,
       badge: true
     })
     
