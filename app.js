@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const cors = require('cors');
 var logger = require('morgan');
 const { success, error } = require("consola");
 var usersRouter = require('./routes/users');
@@ -16,6 +17,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -44,7 +46,7 @@ const startApp = async () => {
     )
   } catch (err) {
     error({
-      message: `Unable to connect with Server \n${err}`,
+      message: `Unable to connect Server \n${err}`,
       badge: true
     })
     
