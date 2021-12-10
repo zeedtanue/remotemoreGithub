@@ -8,4 +8,6 @@ This project is made with nodejs express js framework.
  - Clone the repo
  - run npmi i in command line
  - run npm start in command line
+ - you will find the project in localhost port 5000
+ 
 
