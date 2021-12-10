@@ -39,6 +39,6 @@ exports.getReadme = async(req, res) => {
         let readMeContent = Buffer.from(data.content, data.encoding).toString('ascii')
         res.status(200).json({"readMe" : readMeContent})
     } catch (error) {
-        res.status(500).json('Not found user or repo')
+        res.status(500).json('Not found user or repo found')
     }
 }
